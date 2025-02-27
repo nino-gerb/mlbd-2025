@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pandas as pd
+import numpy as np
 
 def person_a():
     """Reads the data in data/school_performance.csv
@@ -9,13 +11,12 @@ def person_a():
     dataframe: containing first 5,000 rows of school_performace.csv
     """
     # Code goes over here.
-
-    
-    raise NotImplementedError()
+    df = pd.read_csv(filepath_or_buffer="../../data/school_performance.csv")
+    return df.head(5000)
 
 def person_b(df):
     """Keeps only the data from the female students. 
-    Where the column "gender" equals "female". 
+    Where the column "gender" equals "female". P
 
     Parameters:
     df (dataframe): First 5,000 rows of school_performace.csv
@@ -24,7 +25,7 @@ def person_b(df):
     dataframe: Data from the female students
     """
     # Code goes over here.
-    raise NotImplementedError()
+    return df[df["gender"] == "female"]
 
 
 def person_c(df):
@@ -37,8 +38,7 @@ def person_c(df):
     float: Mean grade
     """
     # Code goes over here.
-
-    raise NotImplementedError()
+    return np.mean(df["grade"])
 
 def main():
     """ Main program """
